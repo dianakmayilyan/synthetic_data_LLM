@@ -1,0 +1,88 @@
+2024-12-09 15:31:37,392 INFO    StreamThr :17484 [internal.py:wandb_internal():85] W&B internal server running at pid: 17484, started at: 2024-12-09 15:31:37.391979
+2024-12-09 15:31:37,394 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: status
+2024-12-09 15:31:37,399 INFO    WriterThread:17484 [datastore.py:open_for_write():87] open: /home/jupyter/Students/2024_Mayilyan_LLM/LLM_based/TabuLa/wandb/run-20241209_153137-wfja4tjs/run-wfja4tjs.wandb
+2024-12-09 15:31:37,400 DEBUG   SenderThread:17484 [sender.py:send():391] send: header
+2024-12-09 15:31:37,406 DEBUG   SenderThread:17484 [sender.py:send():391] send: run
+2024-12-09 15:31:40,823 INFO    SenderThread:17484 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 458, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 502, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/opt/conda/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/opt/conda/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/opt/conda/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/requests/adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+  File "/opt/conda/lib/python3.10/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 345, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/opt/conda/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/opt/conda/lib/python3.10/site-packages/requests/sessions.py", line 577, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/requests/sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/requests/sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/requests/adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2024-12-09 15:31:42,410 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:31:47,412 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:31:52,415 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:31:57,441 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:02,443 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:07,446 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:12,448 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:17,451 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:22,453 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:27,455 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:32,457 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:37,460 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:42,462 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:47,464 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:52,467 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:32:57,470 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:33:02,472 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: keepalive
+2024-12-09 15:33:07,475 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: cancel
+2024-12-09 15:33:07,475 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: cancel
+2024-12-09 15:33:07,475 DEBUG   SenderThread:17484 [sender.py:send():400] Record cancelled: run
+2024-12-09 15:33:07,475 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: status_report
+2024-12-09 15:33:12,476 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: status_report
+2024-12-09 15:33:17,477 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: status_report
+2024-12-09 15:33:22,478 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: status_report
+2024-12-09 15:33:23,814 DEBUG   HandlerThread:17484 [handler.py:handle_request():158] handle_request: shutdown
+2024-12-09 15:33:23,815 INFO    HandlerThread:17484 [handler.py:finish():884] shutting down handler
+2024-12-09 15:33:24,478 INFO    SenderThread:17484 [sender.py:finish():1631] shutting down sender
+2024-12-09 15:33:24,478 INFO    WriterThread:17484 [datastore.py:close():296] close: /home/jupyter/Students/2024_Mayilyan_LLM/LLM_based/TabuLa/wandb/run-20241209_153137-wfja4tjs/run-wfja4tjs.wandb
